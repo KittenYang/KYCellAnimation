@@ -10,12 +10,16 @@
 
 @interface TableViewController ()
 
+@property (strong, nonatomic) NSMutableSet *showIndexes;
+
 @end
 
 @implementation TableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _showIndexes = [NSMutableSet set];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -48,7 +52,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 100;
+    return 300;
 }
 
 
@@ -64,60 +68,73 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    /*
+    
     //动画1：
-    CGFloat rotationAngleDegrees = -15;
-    CGFloat rotationAngleRadians = rotationAngleDegrees * (M_PI/ 180);
-    CGPoint offsetPositioning = CGPointMake(-20, -20);
-
+    if (![self.showIndexes containsObject:indexPath]) {
+        [self.showIndexes addObject:indexPath];
+        CGFloat rotationAngleDegrees = -30;
+        CGFloat rotationAngleRadians = rotationAngleDegrees * (M_PI/ 180);
+        CGPoint offsetPositioning = CGPointMake(-80, -80);
+        
+        
+        CATransform3D transform = CATransform3DIdentity;
+        transform = CATransform3DRotate(transform, rotationAngleRadians, 0.0,  0.0, 1.0);
+        transform = CATransform3DTranslate(transform, offsetPositioning.x, offsetPositioning.y , 0.0);
+        
+        cell.layer.transform = transform;
+        cell.alpha = 0.7;
+        [UIView animateWithDuration:1 delay:0.0 usingSpringWithDamping:0.6f initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            cell.layer.transform = CATransform3DIdentity;
+            cell.layer.opacity = 1;
+        } completion:nil];
+    }
     
-    CATransform3D transform = CATransform3DIdentity;
-    transform = CATransform3DRotate(transform, rotationAngleRadians, 0.0,  0.0, 1.0);
-    transform = CATransform3DTranslate(transform, offsetPositioning.x, offsetPositioning.y , 0.0);
     
-    cell.layer.transform = transform;
-    cell.alpha = 0.7;
-    [UIView animateWithDuration:1 delay:0.0 usingSpringWithDamping:0.6f initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        cell.layer.transform = CATransform3DIdentity;
-        cell.layer.opacity = 1;
-    } completion:nil];
-    
-     */
     
     
     /*
     //动画2：
-    CATransform3D rotation;
-    rotation = CATransform3DMakeRotation( (90.0*M_PI)/180, 0.0, 0.7, 0.4);
-    rotation.m34 = 1.0/ -600;
-    
-    
-    //2. Define the initial state (Before the animation)
-    cell.layer.shadowColor = [[UIColor blackColor]CGColor];
-    cell.layer.shadowOffset = CGSizeMake(10, 10);
-    cell.alpha = 0;
-    
-    cell.layer.transform = rotation;
-    cell.layer.anchorPoint = CGPointMake(0, 0.5);
-    
-    
-    //3. Define the final state (After the animation) and commit the animation
-    [UIView beginAnimations:@"rotation" context:NULL];
-    [UIView setAnimationDuration:0.3];
-    cell.layer.transform = CATransform3DIdentity;
-    cell.alpha = 1;
-    cell.layer.shadowOffset = CGSizeMake(0, 0);
-    [UIView commitAnimations];
+    if (![self.showIndexes containsObject:indexPath]) {
+        [self.showIndexes addObject:indexPath];
+        
+        CATransform3D rotation;
+        rotation = CATransform3DMakeRotation( (90.0*M_PI)/180, 0.0, 0.7, 0.4);
+        rotation.m34 = 1.0/ -600;
+        
+        
+        //2. Define the initial state (Before the animation)
+        cell.layer.shadowColor = [[UIColor blackColor]CGColor];
+        cell.layer.shadowOffset = CGSizeMake(10, 10);
+        cell.alpha = 0;
+        
+        cell.layer.transform = rotation;
+        cell.layer.anchorPoint = CGPointMake(0, 0.5);
+        
+        
+        //3. Define the final state (After the animation) and commit the animation
+        [UIView beginAnimations:@"rotation" context:NULL];
+        [UIView setAnimationDuration:0.3];
+        cell.layer.transform = CATransform3DIdentity;
+        cell.alpha = 1;
+        cell.layer.shadowOffset = CGSizeMake(0, 0);
+        [UIView commitAnimations];
+    }
+     
      */
     
-    
+    /*
      //动画3：
-    cell.layer.transform = CATransform3DTranslate(cell.layer.transform, 320, 0, 0);
-    [UIView animateWithDuration:0.5 delay:0.0f usingSpringWithDamping:0.6f initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        cell.layer.transform = CATransform3DIdentity;
-    } completion:nil];
-    
+    if (![self.showIndexes containsObject:indexPath]) {
+        [self.showIndexes addObject:indexPath];
 
+        cell.layer.transform = CATransform3DTranslate(cell.layer.transform, 300, 0, 0);
+        cell.alpha = 0.5;
+        [UIView animateWithDuration:0.3 delay:0.0f usingSpringWithDamping:0.8f initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            cell.layer.transform = CATransform3DIdentity;
+            cell.alpha = 1;
+        } completion:nil];
+    }
+     */
 }
 
 
