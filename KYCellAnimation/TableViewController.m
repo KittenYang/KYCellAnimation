@@ -85,6 +85,7 @@
      */
     
     
+    /*
     //动画2：
     CATransform3D rotation;
     rotation = CATransform3DMakeRotation( (90.0*M_PI)/180, 0.0, 0.7, 0.4);
@@ -107,6 +108,16 @@
     cell.alpha = 1;
     cell.layer.shadowOffset = CGSizeMake(0, 0);
     [UIView commitAnimations];
+     */
+    
+    
+     //动画3：
+    cell.layer.transform = CATransform3DTranslate(cell.layer.transform, 320, 0, 0);
+    [UIView animateWithDuration:0.5 delay:0.0f usingSpringWithDamping:0.6f initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        cell.layer.transform = CATransform3DIdentity;
+    } completion:nil];
+    
+
 }
 
 
