@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		5F87370A1A8F0CC0000CADF4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F8737091A8F0CC0000CADF4 /* main.m */; };
 		5F87370D1A8F0CC0000CADF4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F87370C1A8F0CC0000CADF4 /* AppDelegate.m */; };
-		5F8737101A8F0CC0000CADF4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F87370F1A8F0CC0000CADF4 /* ViewController.m */; };
 		5F8737131A8F0CC0000CADF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F8737111A8F0CC0000CADF4 /* Main.storyboard */; };
 		5F8737151A8F0CC0000CADF4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F8737141A8F0CC0000CADF4 /* Images.xcassets */; };
 		5F8737181A8F0CC0000CADF4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F8737161A8F0CC0000CADF4 /* LaunchScreen.xib */; };
 		5F8737241A8F0CC1000CADF4 /* KYCellAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F8737231A8F0CC1000CADF4 /* KYCellAnimationTests.m */; };
+		5F87372F1A8F0D0A000CADF4 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F87372E1A8F0D0A000CADF4 /* TableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +32,14 @@
 		5F8737091A8F0CC0000CADF4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5F87370B1A8F0CC0000CADF4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5F87370C1A8F0CC0000CADF4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5F87370E1A8F0CC0000CADF4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5F87370F1A8F0CC0000CADF4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5F8737121A8F0CC0000CADF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F8737141A8F0CC0000CADF4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5F8737171A8F0CC0000CADF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5F87371D1A8F0CC1000CADF4 /* KYCellAnimationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KYCellAnimationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F8737221A8F0CC1000CADF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F8737231A8F0CC1000CADF4 /* KYCellAnimationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KYCellAnimationTests.m; sourceTree = "<group>"; };
+		5F87372D1A8F0D0A000CADF4 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewController.h; path = ../TableViewController.h; sourceTree = "<group>"; };
+		5F87372E1A8F0D0A000CADF4 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewController.m; path = ../TableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +83,8 @@
 			children = (
 				5F87370B1A8F0CC0000CADF4 /* AppDelegate.h */,
 				5F87370C1A8F0CC0000CADF4 /* AppDelegate.m */,
-				5F87370E1A8F0CC0000CADF4 /* ViewController.h */,
-				5F87370F1A8F0CC0000CADF4 /* ViewController.m */,
+				5F87372D1A8F0D0A000CADF4 /* TableViewController.h */,
+				5F87372E1A8F0D0A000CADF4 /* TableViewController.m */,
 				5F8737111A8F0CC0000CADF4 /* Main.storyboard */,
 				5F8737141A8F0CC0000CADF4 /* Images.xcassets */,
 				5F8737161A8F0CC0000CADF4 /* LaunchScreen.xib */,
@@ -219,8 +219,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F8737101A8F0CC0000CADF4 /* ViewController.m in Sources */,
 				5F87370D1A8F0CC0000CADF4 /* AppDelegate.m in Sources */,
+				5F87372F1A8F0D0A000CADF4 /* TableViewController.m in Sources */,
 				5F87370A1A8F0CC0000CADF4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

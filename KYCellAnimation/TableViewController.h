@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TableViewController.h
 //  KYCellAnimation
 //
 //  Created by Kitten Yang on 2/14/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface TableViewController : UITableViewController
 
 @end
-
